@@ -2,4 +2,4 @@
 first pony shooter is a first person shooter where you play as ponys, it's opensource and, 100% free.
 
 ## Contrubuting 
-see [Contrubuting.md](./CONTRIBUTING.md)
+see [Contrubuting.md](https://github.com/bronygamedev/firstponyshooter/blob/main/CONTRIBUTING.md)

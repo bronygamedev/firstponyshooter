@@ -29,8 +29,6 @@ func _input(event):
 	
 	if event is InputEventKey:
 		print(is_on_floor())
-		
-		
 
 func _physics_process(delta):
 	
