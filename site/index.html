@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project name</title>
+    <link rel="icon" type="image/png" href="/assets/images/profile.png">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <img class="" width="50px" src="/assets/images/profile.png"
+            alt="a red my little pony character with a black mane with a blue stripe">
+        <div style="float: right;">
+            <a href="/">home</a>
+            <a href="/projects">projects</a>
+
+        </div>
+
+    </nav>
+    <base target="_blank">
+    <div id="md" class="center"></div>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://raw.githubusercontent.com/bronygamedev/project/main/readme.md', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var md = xhr.responseText;
+                var html = markdownit().render(md);
+                document.getElementById('md').innerHTML = html;
+            }
+        };
+        xhr.send();
+    </script> 
+</body>
+</html>
