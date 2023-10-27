@@ -1,14 +1,17 @@
 extends KinematicBody
 
-var speed = 10 
-var h_acceleration = 6
-var gravity = 20
-var jump = 10
-var Full_contact = false
-var air_acceleration = 1
-var normal_acceleration = 6
+var speed:float = 10 
+var h_acceleration:float = 6
+var gravity:float = 20
+var jump:float = 10
+var air_acceleration:float = 1
+var normal_acceleration:float = 6
 
-export(float , 0.01, 1) var mouse_sencitivity = 0.05
+var full_contact:bool = false
+
+export(float , 0.01, 1) var mouse_sensitivity = 0.05
+export(float , 0.01, 10) var gamepad_sensitivity = 1.5
+export(float , 0.01, 1) var joystick_deadzone = 0.5
 
 var direction:Vector3
 var h_velocity:Vector3
@@ -20,34 +23,35 @@ onready var ground_check = $GroundCheck
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 func _input(event):
 	
 	if event is InputEventMouseMotion:
-		rotate_y(deg2rad(-event.relative.x * mouse_sencitivity))
-		head.rotate_x(deg2rad(-event.relative.y * mouse_sencitivity))
+		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
+		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89),deg2rad(89))
-	
-	if event is InputEventKey:
-		print(is_on_floor())
 
 func _physics_process(delta):
 	
 	direction = Vector3()
+	gamepad_handler()
 	
 	if ground_check.is_colliding():
-		Full_contact = true
+		full_contact = true
 	else:
-		Full_contact = false
+		full_contact = false
+	
 	if not is_on_floor():
 		gravity_vec += Vector3.DOWN * gravity * delta
 		h_acceleration = air_acceleration
-	elif is_on_floor() and Full_contact:
+	elif is_on_floor() and full_contact:
 		gravity_vec = -get_floor_normal() * gravity
 		h_acceleration = normal_acceleration
 	else:
 		gravity_vec = -get_floor_normal()
 		h_acceleration = normal_acceleration
-	
+		
+	# movement
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or ground_check.is_colliding()):
 			gravity_vec = Vector3.UP * jump
 	
@@ -68,3 +72,11 @@ func _physics_process(delta):
 	movment.y = gravity_vec.y
 	
 	move_and_slide(movment, Vector3.UP)
+	
+func gamepad_handler():
+	var _leftstick = Input.get_vector("joystick_Lstick_right","joystick_Lstick_left","joystick_Lstick_down","joystick_Lstick_up", joystick_deadzone)
+	var rightstick = Input.get_vector("joystick_Rstick_right","joystick_Rstick_left","joystick_Rstick_down","joystick_Rstick_up", joystick_deadzone)
+	if rightstick != Vector2.ZERO:
+		rotate_y(deg2rad(rightstick.x * gamepad_sensitivity))
+		head.rotate_x(deg2rad(rightstick.y * gamepad_sensitivity))
+		head.rotation.x = clamp(head.rotation.x, deg2rad(-89),deg2rad(89))

@@ -163,6 +163,16 @@ Updating, improving and correcting the documentation
     # code ...
   
   ```
+  **DO NOT PUT A NEW LINE BEFORE AN ELSE OR ELIF**
+  ```
+  if a == b:
+    # code ...
+
+  else:
+    #code ..
+  
+  #DO NOT DO THIS
+  ```
  - group varables together and, put a newline between groups. eg:
   
   ```
@@ -177,6 +187,7 @@ Updating, improving and correcting the documentation
   ```
  - when making global varables always specify the varable type.  
   eg: `var foo:int = 1`
+
 ### Commit Messages
 please clearly state what you did.
 <!-- TODO make this better-->

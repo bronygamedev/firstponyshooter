@@ -84,11 +84,11 @@ shape = SubResource( 6 )
 [node name="ramps" type="StaticBody" parent="Floor"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor/ramps"]
-transform = Transform( 11.3064, 0, 0, 0, 2.23557, 0, 0, 0, 1.36154, 16.0384, 3.45462, 3.95226 )
+transform = Transform( 11.3064, 0, 0, 0, 2.23557, 0, 0, 0, 1.36154, 16.0384, 2.18822, 3.95226 )
 mesh = SubResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor/ramps"]
-transform = Transform( 11.3064, 0, 0, 0, 2.23557, 0, 0, 0, 1.36154, 16.0384, 3.45462, 3.95226 )
+transform = Transform( 11.3064, 0, 0, 0, 2.23557, 0, 0, 0, 1.36154, 16.0384, 2.18822, 3.95226 )
 shape = SubResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

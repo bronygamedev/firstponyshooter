@@ -30,7 +30,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.529, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 current = true
-fov = 105.0
 
 [node name="GroundCheck" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
