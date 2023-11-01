@@ -19,7 +19,9 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [I Want To Contribute](#i-want-to-contribute)
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Enhancements](#suggesting-enhancements)
-  - [Your First Code Contribution](#your-first-code-contribution)
+  - [Setting up your envirement](#setting-up-your-envirement)
+  - [Contributing assets](#contributing-assets)
+  - [Licences](#licences)
 - [Styleguides](#styleguides)
   - [Commit Messages](#commit-messages)
 
@@ -131,19 +133,26 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/bronyg
 
 <!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
 
-### Your First Code Contribution
+### Setting up your envirement
 Required programes:
-> the latest godot 3 stable build
-
-> **Note**:  
-> godot has a build in script editor but you can use an external ide (e.g. vscode, sublime text, notepad++) if you whant to.
-> 
+ - the latest godot 4 mono stable build  
+ - dotnet 7 sdk
 <!--### Improving The Documentation
 <!-- TODO
 Updating, improving and correcting the documentation
 
 -->
+### Contributing assets 
 
+If you wish to contribute assets (3d models, images,audio,fonts, etc) follow these rules:  
+ - No pentagrams or other satanic symbols.  
+ - please keep all assets modest (13+).  
+ - all 3D models bust be in the glb, gltf and/or blend formats.  
+
+If you contribute 3D models it's recommended that you put a blend file in `blender_files/{yourname}` with the appropriate textures.
+
+### Licences 
+All assets are licened under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0)
 ## Styleguides
 - have a new line before and after eatch: if, func, match and, for statments.
   eg:  
@@ -174,19 +183,23 @@ Updating, improving and correcting the documentation
   #DO NOT DO THIS
   ```
  - group varables together and, put a newline between groups. eg:
-  
-  ```
-  var foo:int = 1
-  var foo2:int = 4
+    ```
+    var foo:int = 1
+    var foo2:int = 4
 
-  var foo3:float = 2.3
-  var foo4:float = 3.2 
-  
-  etc ...
-  
-  ```
+    var foo3:float = 2.3
+    var foo4:float = 3.2 
+      
+    etc ...
+      
+    ```
  - when making global varables always specify the varable type.  
   eg: `var foo:int = 1`
+ - Use snake_case for folder and file names (with the exception of C# scripts). This sidesteps case sensitivity issues that can crop up after exporting a project on Windows. C# scripts are an exception to this rule, as the convention is to name them after the class name which should be in PascalCase.
+ - Use PascalCase for node names, as this matches built-in node casing.
+ - In general, keep third-party resources in a top-level `addons/` folder, even if they aren't editor plugins. This makes it easier to track which files are third-party. There are some exceptions to this rule; for instance, if you use third-party game assets for a character, it makes more sense to include them within the same folder as the character scenes and scripts.
+
+
 
 ### Commit Messages
 please clearly state what you did.
