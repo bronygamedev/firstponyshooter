@@ -1,10 +1,10 @@
 [gd_scene load_steps=35 format=3 uid="uid://bb6ku2icjwyy0"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerNew.gd" id="1_rqpje"]
-[ext_resource type="Texture2D" uid="uid://byx0gr2uxb3jw" path="res://3D_models/bronygamedev/Textures/eyes.png" id="2_g280u"]
-[ext_resource type="Texture2D" uid="uid://cjw5tgvane547" path="res://3D_models/bronygamedev/Textures/hairFront.png" id="3_qb48x"]
-[ext_resource type="Texture2D" uid="uid://ecn7wlppg58f" path="res://3D_models/bronygamedev/Textures/horn.png" id="4_5pj4o"]
-[ext_resource type="Texture2D" uid="uid://d3a8cy8kigqa5" path="res://3D_models/bronygamedev/Textures/tail.png" id="5_nrysm"]
+[ext_resource type="Texture2D" uid="uid://byx0gr2uxb3jw" path="res://assets/3D_models/bronygamedev/Textures/eyes.png" id="2_g280u"]
+[ext_resource type="Texture2D" uid="uid://cjw5tgvane547" path="res://assets/3D_models/bronygamedev/Textures/hairFront.png" id="3_qb48x"]
+[ext_resource type="Texture2D" uid="uid://ecn7wlppg58f" path="res://assets/3D_models/bronygamedev/Textures/horn.png" id="4_5pj4o"]
+[ext_resource type="Texture2D" uid="uid://d3a8cy8kigqa5" path="res://assets/3D_models/bronygamedev/Textures/tail.png" id="5_nrysm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgucl"]
 albedo_texture = ExtResource("2_g280u")
