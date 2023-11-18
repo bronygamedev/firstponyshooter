@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpfnoj417jyng"]
+
+[sub_resource type="GDScript" id="GDScript_h6dxp"]
+script/source = "extends Node3D
+
+@onready var mesh = $MeshInstance3D
+
+const SPEED = 40.0
+const GRAVITY = -3
+@export var damage:float
+func _physics_process(_delta):
+	position += transform.basis * Vector3(0,GRAVITY,-SPEED) * _delta
+
+
+func _on_range_timeout():
+	queue_free()
+
+
+func _on_hit(body):
+	if body.is_in_group(\"enemy\"):
+		body.health -= damage
+		queue_free()
+"
+
+[sub_resource type="SphereMesh" id="SphereMesh_7yldc"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvdor"]
+albedo_color = Color(0, 0.494118, 0.494118, 1)
+emission_enabled = true
+emission = Color(0, 0.862745, 0.862745, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5my0n"]
+radius = 0.05
+
+[node name="Bullet" type="Node3D"]
+script = SubResource("GDScript_h6dxp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.05)
+mesh = SubResource("SphereMesh_7yldc")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvdor")
+
+[node name="range" type="Timer" parent="."]
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_5my0n")
+
+[connection signal="timeout" from="range" to="." method="_on_range_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_hit"]
