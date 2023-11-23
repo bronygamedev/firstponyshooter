@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pra34"]
 [ext_resource type="Script" path="res://Scripts/playerHealthManager.gd" id="2_8i8ts"]
 [ext_resource type="Script" path="res://Scripts/Guns.gd" id="2_gulbq"]
-[ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
-[ext_resource type="PackedScene" uid="uid://j8xgiq2yy0ta" path="res://Scenes/misc/HUD.tscn" id="4_i7i6s"]
+[ext_resource type="PackedScene" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
+[ext_resource type="PackedScene" path="res://Scenes/misc/HUD.tscn" id="4_i7i6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcgbv"]
 albedo_color = Color(0, 0, 0, 1)

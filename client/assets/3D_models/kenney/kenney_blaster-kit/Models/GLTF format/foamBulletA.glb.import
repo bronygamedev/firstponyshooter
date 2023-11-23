@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://b8w2xhtvooajk"
+=======
+uid="uid://cac3jl2tcf8id"
+>>>>>>> parent of 014455c (completed issues #3 #5)
 path="res://.godot/imported/foamBulletA.glb-c36edb260dec0b8245e9e99a2f3a560f.scn"
 
 [deps]
@@ -20,11 +24,11 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
-meshes/lightmap_texel_size=0.2
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 animation/import=true
-animation/fps=30
+animation/fps=15
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""

@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://dwnvvrfklthmt"
+=======
+uid="uid://cdpykxboaw8kl"
+>>>>>>> parent of 014455c (completed issues #3 #5)
 path="res://.godot/imported/blasterP.glb-b451c4dac0bebb427a0912394c6bd5b3.scn"
 
 [deps]
@@ -20,11 +24,11 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=1
-meshes/lightmap_texel_size=0.2
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 animation/import=true
-animation/fps=30
+animation/fps=15
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""

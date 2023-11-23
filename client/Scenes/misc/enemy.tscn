@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0x0dnj5q0va2"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_omrlq"]
-[ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_xulji"]
+[ext_resource type="PackedScene" path="res://Scenes/Guns/type-a.tscn" id="3_xulji"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pj1jp"]
 
