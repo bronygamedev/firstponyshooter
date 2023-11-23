@@ -26,3 +26,4 @@ mono_crash.*.json
 clientold/**
 client.zip
 get_contributors.py
+change_permissions.py

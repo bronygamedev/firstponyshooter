@@ -29,6 +29,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="first pony shooter"
 
+[editor]
+
+movie_writer/fps=30
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
@@ -145,7 +149,7 @@ aim={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
-environment/defaults/default_environment="res://default_env.tres"
+renderer/rendering_method.mobile="gl_compatibility"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_bptc=true
 vram_compression/import_etc=true

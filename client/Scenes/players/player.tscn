@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd2b3pd08qtox"]
+[gd_scene load_steps=13 format=3 uid="uid://bd2b3pd08qtox"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pra34"]
+[ext_resource type="Script" path="res://Scripts/playerHealthManager.gd" id="2_8i8ts"]
 [ext_resource type="Script" path="res://Scripts/Guns.gd" id="2_gulbq"]
 [ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
+[ext_resource type="PackedScene" uid="uid://j8xgiq2yy0ta" path="res://Scenes/misc/HUD.tscn" id="4_i7i6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcgbv"]
 albedo_color = Color(0, 0, 0, 1)
@@ -183,8 +185,11 @@ _data = {
 "aim": SubResource("Animation_sdpw2")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_pra34")
+
+[node name="healthManager" type="Node3D" parent="."]
+script = ExtResource("2_8i8ts")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_jyn5o")
@@ -216,3 +221,5 @@ transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0,
 libraries = {
 "": SubResource("AnimationLibrary_bknib")
 }
+
+[node name="HUD" parent="." instance=ExtResource("4_i7i6s")]

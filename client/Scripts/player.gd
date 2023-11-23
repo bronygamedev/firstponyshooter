@@ -7,12 +7,15 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var ground_check = $GroundCheck
 
+
+
 var speed:float= 10
 var h_acceleration:float = 6
 var gravity:float = 20
 var jump:float = 10
 var air_acceleration:float = 1 
 var normal_acceleration:float = 6
+
 
 var full_contact:bool = false
 
@@ -78,4 +81,5 @@ func gamepad_handler():
 		head.rotate_x(deg_to_rad(rightstick.y * gamepad_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89),deg_to_rad(89))
 		
-
+func damage(damage):
+	$healthManager.damage(damage)

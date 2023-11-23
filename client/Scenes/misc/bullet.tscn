@@ -3,11 +3,20 @@
 [sub_resource type="GDScript" id="GDScript_h6dxp"]
 script/source = "extends Node3D
 
+@export var damage:float
+
 @onready var mesh = $MeshInstance3D
 
-const SPEED = 40.0
-const GRAVITY = -3
-@export var damage:float
+enum shotspawners {
+	Player,
+	Enemy
+}
+
+var shotfrom
+
+const SPEED = 50
+const GRAVITY = -1
+
 func _physics_process(_delta):
 	position += transform.basis * Vector3(0,GRAVITY,-SPEED) * _delta
 
@@ -17,9 +26,13 @@ func _on_range_timeout():
 
 
 func _on_hit(body):
-	if body.is_in_group(\"enemy\"):
+	if body.is_in_group(\"enemy\") and shotfrom == shotspawners.Player:
 		body.health -= damage
 		queue_free()
+	elif shotfrom == shotspawners.Enemy and body.is_in_group(\"Player\"):
+		body.damage(1)
+		queue_free()
+		
 "
 
 [sub_resource type="SphereMesh" id="SphereMesh_7yldc"]

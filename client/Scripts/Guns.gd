@@ -10,13 +10,7 @@ var aiming = false
 
 func _process(_delta):
 	if Input.is_action_pressed("shoot"):
-		if !gun_animation.is_playing():
-			gun_animation.play("Shoot")
-			bullet_insence = bullet.instantiate()
-			bullet_insence.damage = gun.get_meta("damage")
-			bullet_insence.position = gun_barrel.global_position
-			bullet_insence.transform.basis = gun_barrel.global_transform.basis
-			get_parent().get_parent().get_parent().add_child(bullet_insence)
+		shoot()
 	if Input.is_action_pressed("aim"):
 		if not aiming:
 			$"../../AnimationPlayer".play("aim")
@@ -27,3 +21,12 @@ func _process(_delta):
 		aiming = false
 		$"../..".mouse_sensitivity = 0.05
 		
+func shoot():
+	if !gun_animation.is_playing():
+		gun_animation.play("Shoot")
+		bullet_insence = bullet.instantiate()
+		bullet_insence.damage = gun.get_meta("damage")
+		bullet_insence.position = gun_barrel.global_position
+		bullet_insence.transform.basis = gun_barrel.global_transform.basis
+		bullet_insence.shotfrom = bullet_insence.shotspawners.Player
+		get_parent().get_parent().get_parent().add_child(bullet_insence)
