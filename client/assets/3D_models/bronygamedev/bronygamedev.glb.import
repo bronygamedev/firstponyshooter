@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
 uid="uid://dydq8qjaugv0x"
-=======
-uid="uid://bq1u0a35j51jl"
->>>>>>> parent of 014455c (completed issues #3 #5)
 path="res://.godot/imported/bronygamedev.glb-cca52593b7b0f83044c000665dac364c.scn"
 
 [deps]
