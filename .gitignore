@@ -27,3 +27,4 @@ clientold/**
 client.zip
 get_contributors.py
 change_permissions.py
+.sync.ffs_db

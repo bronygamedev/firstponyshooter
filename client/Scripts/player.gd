@@ -6,12 +6,13 @@ extends CharacterBody3D
 
 @onready var head = $Head
 @onready var ground_check = $GroundCheck
-
-
+@onready var globalPlayerVars = get_node("/root/PlayerGlobalVarables")
+@onready var globalVarables = get_node("/root/GlobalVarables")
+@onready var sceneManager = get_node("/root/SceneManager")
+@onready var gravity = globalVarables.gravity
 
 var speed:float= 10
 var h_acceleration:float = 6
-var gravity:float = 20
 var jump:float = 10
 var air_acceleration:float = 1 
 var normal_acceleration:float = 6
@@ -26,6 +27,7 @@ var gravity_direction:Vector3
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$"HUD/HealthBar".value = globalPlayerVars.maxhealth
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -36,10 +38,12 @@ func _input(event):
 func _physics_process(delta):
 	gamepad_handler()
 	direction = Vector3()
+	
 	if ground_check.is_colliding():
 		full_contact = true
 	else:
 		full_contact = false
+	
 	if not is_on_floor():
 		gravity_direction += Vector3.DOWN * gravity * delta
 		h_acceleration = air_acceleration
@@ -50,7 +54,10 @@ func _physics_process(delta):
 		gravity_direction = -get_floor_normal()
 		h_acceleration = normal_acceleration
 		
+	if globalPlayerVars.health <= 0: 
+		sceneManager.changeScene(owner.name, sceneManager.gameoverScreenPath)
 		
+
 	#movement
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or ground_check.is_colliding()):
 		gravity_direction = Vector3.UP * jump
@@ -81,5 +88,6 @@ func gamepad_handler():
 		head.rotate_x(deg_to_rad(rightstick.y * gamepad_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89),deg_to_rad(89))
 		
-func damage(damage):
-	$healthManager.damage(damage)
+func damage(_damage):
+	globalPlayerVars.health -= _damage
+	$"HUD/HealthBar".value = globalPlayerVars.health

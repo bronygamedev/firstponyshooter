@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd2b3pd08qtox"]
+[gd_scene load_steps=12 format=3 uid="uid://bd2b3pd08qtox"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pra34"]
-[ext_resource type="Script" path="res://Scripts/playerHealthManager.gd" id="2_8i8ts"]
 [ext_resource type="Script" path="res://Scripts/Guns.gd" id="2_gulbq"]
 [ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
 [ext_resource type="PackedScene" uid="uid://drraxvfcsxsu3" path="res://Scenes/misc/HUD.tscn" id="4_i7i6s"]
@@ -187,9 +186,6 @@ _data = {
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_pra34")
-
-[node name="healthManager" type="Node3D" parent="."]
-script = ExtResource("2_8i8ts")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_jyn5o")

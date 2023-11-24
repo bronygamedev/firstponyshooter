@@ -12,22 +12,22 @@ config_version=5
 
 config/name="first pony shooter"
 run/main_scene="res://Scenes/maps/testing grounds.tscn"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.1")
 boot_splash/show_image=false
 config/icon="res://icon.png"
+boot_splash/use_custom_user_dir=false
 
 [autoload]
 
-ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
+PlayerGlobalVarables="*res://Scripts/PlayerGlobalVarables.gd"
+GlobalVarables="*res://Scripts/globalVarables.gd"
+SceneManager="*res://Scripts/SceneManager.gd"
 
 [display]
 
 window/size/viewport_height=576
 window/stretch/mode="viewport"
-
-[dotnet]
-
-project/assembly_name="first pony shooter"
 
 [editor]
 
@@ -35,7 +35,7 @@ movie_writer/fps=30
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
+enabled=PackedStringArray()
 
 [filesystem]
 

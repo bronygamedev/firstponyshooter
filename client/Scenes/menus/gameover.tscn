@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://3oalj4b1sjnr"]
+
+[sub_resource type="GDScript" id="GDScript_ue73r"]
+script/source = "extends Control
+
+@onready var sceneManager = get_node(\"/root/SceneManager\")
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _on_menu_button_pressed():
+	sceneManager.changeScene(name,sceneManager.mainmenuScenePath)
+"
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ue73r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.582
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 341.0
+offset_top = -0.231995
+offset_right = -379.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.569
+offset_right = 3.0
+offset_bottom = 0.255981
+columns = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "waves  suvived:"
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "*"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "enemys elimenated: "
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "*"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = 0.769
+anchor_right = 0.609
+anchor_bottom = 0.902
+offset_left = 0.559967
+offset_top = 0.0559692
+offset_right = 130.432
+offset_bottom = 32.4479
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 72
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_menu_button_pressed"]

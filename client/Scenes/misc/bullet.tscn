@@ -30,7 +30,7 @@ func _on_hit(body):
 		body.health -= damage
 		queue_free()
 	elif shotfrom == shotspawners.Enemy and body.is_in_group(\"Player\"):
-		body.damage(1)
+		body.damage(10)
 		queue_free()
 		
 "

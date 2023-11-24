@@ -6,9 +6,11 @@ var canSpawnNewEnemy = true
 var navMapReady = false
 @onready var map = $Map
 
+
 func _ready():
 	await get_tree().process_frame
 	navMapReady = true
+	
 func _input(event):
 	if event is InputEventKey and (event.keycode == KEY_T and canSpawnNewEnemy):
 		e_insence = enemy.instantiate()
