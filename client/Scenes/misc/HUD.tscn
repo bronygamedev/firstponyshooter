@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drraxvfcsxsu3"]
+[gd_scene load_steps=4 format=3 uid="uid://drraxvfcsxsu3"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_6f2rr"]
 [ext_resource type="Texture2D" uid="uid://dwpijd8v0axs8" path="res://assets/Images/UI/whitesquare.png" id="2_ir1nt"]
+[ext_resource type="PackedScene" uid="uid://sbl4rscivr8g" path="res://Scenes/UI/settings_container.tscn" id="3_0ciyq"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -36,3 +37,8 @@ grow_horizontal = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="SettingsContainer" parent="." instance=ExtResource("3_0ciyq")]
+visible = false
+layout_mode = 1
+offset_top = 25.0

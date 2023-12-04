@@ -2,7 +2,7 @@
 .godot/
 
 # Godot-specific ignores
-.import/
+**/*.import/**
 export.cfg
 export_presets.cfg
 # Dummy HTML5 export presets file for continuous integration
@@ -28,3 +28,4 @@ client.zip
 get_contributors.py
 change_permissions.py
 .sync.ffs_db
+client/.import/*

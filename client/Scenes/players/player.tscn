@@ -219,3 +219,5 @@ libraries = {
 }
 
 [node name="HUD" parent="." instance=ExtResource("4_i7i6s")]
+
+[editable path="Head/Guns/Type-a"]

@@ -56,7 +56,9 @@ layout_mode = 0
 offset_right = 446.0
 offset_bottom = 72.0
 theme_override_font_sizes/font_size = 50
-text = "Insert Logo here"
+text = "Need logo"
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 metadata/_edit_lock_ = true
 
