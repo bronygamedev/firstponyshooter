@@ -42,3 +42,36 @@ uppercase = true
 visible = false
 layout_mode = 1
 offset_top = 25.0
+
+[node name="crosshair" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 556.0
+offset_top = 268.0
+offset_right = -556.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+
+[node name="ColorRect2" type="ColorRect" parent="crosshair"]
+layout_mode = 0
+offset_left = -0.0524063
+offset_top = 18.9889
+offset_right = 39.9476
+offset_bottom = 20.9889
+rotation = 1.5708
+pivot_offset = Vector2(20.0207, 1.03175)
+color = Color(0, 0, 0, 0.211765)
+
+[node name="ColorRect" type="ColorRect" parent="crosshair"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 40.0
+offset_bottom = 21.0
+pivot_offset = Vector2(20, 1)
+color = Color(0, 0, 0, 0.211765)
+
+[connection signal="exit" from="SettingsContainer" to="." method="_on_settings_container_exit"]

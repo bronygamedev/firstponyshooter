@@ -123,21 +123,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1955, 8.77435, 17.7988)
 
 [node name="SpawnCoolDown" type="Timer" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 4
-visible = false
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer"]
-size_2d_override_stretch = true
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -21.2996, 46.1319, -26.8061)
-current = true
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_right = 308.0
-offset_bottom = 308.0
-expand_mode = 1
-
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="timeout" from="SpawnCoolDown" to="." method="_on_cool_down_timeout"]

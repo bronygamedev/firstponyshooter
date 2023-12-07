@@ -7,9 +7,10 @@ var aiming = false
 @onready var gun = $"Type-a"
 @onready var gun_animation = $"Type-a/AnimationPlayer"
 @onready var gun_barrel = $"Type-a/Barrel"
-
+@onready var pointer = $"../pointer"
 func _process(_delta):
-	if Input.is_action_pressed("shoot"):
+	cast_ray()
+	if Input.is_action_pressed("shoot") and !get_tree().get_nodes_in_group("Settings")[0].visible:
 		shoot()
 	if Input.is_action_pressed("aim"):
 		if not aiming:
@@ -30,3 +31,12 @@ func shoot():
 		bullet_insence.transform.basis = gun_barrel.global_transform.basis
 		bullet_insence.shotfrom = bullet_insence.shotspawners.Player
 		get_parent().get_parent().get_parent().add_child(bullet_insence)
+
+func cast_ray():
+	if pointer.is_colliding():
+		# get the intersection point
+		var collision_point = pointer.get_collision_point()
+		look_at(collision_point)
+		
+
+

@@ -30,7 +30,7 @@ func _ready():
 	$"HUD/HealthBar".value = globalPlayerVars.maxhealth
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !get_tree().get_nodes_in_group("Settings")[0].visible:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
