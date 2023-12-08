@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2j7n1b76p01c"]
 
 [ext_resource type="Script" path="res://Scripts/testing grounds.gd" id="1_5c5tl"]
-[ext_resource type="PackedScene" uid="uid://bd2b3pd08qtox" path="res://Scenes/players/player.tscn" id="1_vxoov"]
 [ext_resource type="PackedScene" uid="uid://c0x0dnj5q0va2" path="res://Scenes/misc/enemy.tscn" id="3_pjdrh"]
 [ext_resource type="Texture2D" uid="uid://cula1ria8r5pi" path="res://assets/Images/kenney-prototype-textures/dark/texture_03.png" id="3_s5jtl"]
+[ext_resource type="PackedScene" uid="uid://bb6ku2icjwyy0" path="res://Scenes/players/Bronygamedev.tscn" id="5_v0r6u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kcvux"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,9 +38,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3cshr")
-
-[node name="Player" parent="." instance=ExtResource("1_vxoov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0357, 13.6975, -39.7986)
 
 [node name="Map" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_j6mrc")
@@ -119,9 +116,14 @@ size = Vector3(1.22215, 1, 4.2239)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1955, 8.77435, 17.7988)
 
 [node name="enemy" parent="." instance=ExtResource("3_pjdrh")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1955, 8.77435, 17.7988)
+visible = false
 
 [node name="SpawnCoolDown" type="Timer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("5_v0r6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="timeout" from="SpawnCoolDown" to="." method="_on_cool_down_timeout"]
