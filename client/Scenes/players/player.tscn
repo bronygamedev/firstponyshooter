@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pra34"]
 [ext_resource type="Script" path="res://Scripts/Guns.gd" id="2_gulbq"]
 [ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
-[ext_resource type="PackedScene" uid="uid://drraxvfcsxsu3" path="res://Scenes/misc/HUD.tscn" id="4_i7i6s"]
+[ext_resource type="PackedScene" uid="uid://drraxvfcsxsu3" path="res://Scenes/UI/HUD.tscn" id="4_i7i6s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcgbv"]
 albedo_color = Color(0, 0, 0, 1)
@@ -128,9 +128,6 @@ script = ExtResource("2_gulbq")
 
 [node name="BlasterA" parent="Head/Guns/Type-a" index="0"]
 transform = Transform3D(-1, 0, -8.56817e-08, 0, 1, 0, 8.56817e-08, 0, -1, 0, 0, 0)
-
-[node name="pointer" type="RayCast3D" parent="Head"]
-target_position = Vector3(0, 0, -100)
 
 [node name="GroundCheck" type="RayCast3D" parent="."]
 
