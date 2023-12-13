@@ -14,8 +14,6 @@ website: https://bronygamedev.github.io/firstponyshooter/
 	- [How to Get Help](#how-to-get-help)
 	- [Contributing](#contributing)
 	- [License](#license)
-	- [Authors](#authors)
-	- [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -55,17 +53,3 @@ We encourage public contributions! Please review [CONTRIBUTING.md](docs/CONTRIBU
 This project is licensed under the GPL-3.0 License - see [LICENSE.md](LICENSE.md) file for details.
 
 **[Back to top](#table-of-contents)**
-<!---
-## Authors
-
-* **[Phillip Johnston](https://github.com/phillipjohnston)** - *Initial work* - [Embedded Artistry](https://github.com/embeddedartistry)
-
-Also, see the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-**[Back to top](#table-of-contents)**
-
-## Acknowledgments
-
-Provide proper credits, shout-outs, and honorable mentions here. Also provide links to relevant repositories, blog posts, or contributors worth mentioning.
-
-**[Back to top](#table-of-contents)**->
