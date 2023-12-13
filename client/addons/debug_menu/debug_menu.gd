@@ -195,7 +195,7 @@ func update_settings_label() -> void:
 
 		if not antialiasing_3d_string.is_empty():
 			settings.text += "\n3D Antialiasing: %s" % antialiasing_3d_string
-		
+
 		var environment := viewport.get_camera_3d().get_world_3d().environment
 		if environment:
 			if environment.ssr_enabled:

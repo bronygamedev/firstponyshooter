@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var speed:float = 10 
+var speed:float = 10
 var h_acceleration:float = 6
 var jump:float = 10
 var air_acceleration:float = 1
@@ -42,20 +42,28 @@ func _input(event):
 		angle = event.relative.y * mouse_sensitivity * VERTICAL_sensitivity
 		# Apply the rotation to the pose
 		bonePose = bonePose.rotated(axis, angle)
+		# Changes the basis to a euler
+		var bonePosEuler = bonePose.basis.get_euler()
+		# Clamps that euler
+		bonePosEuler.x = clamp(bonePosEuler.x,-0.9,0.265)
+		# Turns the euler into a bias
+		bonePose.basis = Basis().from_euler(bonePosEuler)
 		# Reset the position to the original one
 		bonePose.origin = original_position
 		# Set the new pose of the bone
 		skel.set_bone_global_pose_override(17, bonePose, 1.0, true)
 
+
+
 func _physics_process(delta):
 	gamepad_handler()
 	direction = Vector3()
-	
+
 	if ground_check.is_colliding():
 		full_contact = true
 	else:
 		full_contact = false
-	
+
 	if not is_on_floor():
 		gravity_direction += Vector3.DOWN * gravity * delta
 		h_acceleration = air_acceleration
@@ -65,10 +73,10 @@ func _physics_process(delta):
 	else:
 		gravity_direction = -get_floor_normal()
 		h_acceleration = normal_acceleration
-		
-	if globalPlayerVars.health <= 0: 
+
+	if globalPlayerVars.health <= 0:
 		sceneManager.changeScene(owner.name, sceneManager.gameoverScreenPath)
-		
+
 
 	#movement
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or ground_check.is_colliding()):
@@ -78,12 +86,12 @@ func _physics_process(delta):
 			direction += transform.basis.z
 	elif Input.is_action_pressed("move_backward") or Input.is_action_pressed("joystick_Lstick_down"):
 			direction -= transform.basis.z
-	
+
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("joystick_Lstick_left"):
 			direction += transform.basis.x
 	elif Input.is_action_pressed("move_right") or Input.is_action_pressed("joystick_Lstick_right"):
 			direction -= transform.basis.x
-		
+
 	direction = direction.normalized()
 	h_velocity = h_velocity.lerp(direction * speed,h_acceleration * delta)
 	movement.z = h_velocity.z + gravity_direction.z
@@ -92,7 +100,7 @@ func _physics_process(delta):
 	set_velocity(movement)
 	set_up_direction(Vector3.UP)
 	move_and_slide()
-	
+
 func gamepad_handler():
 	var _leftstick = Input.get_vector("joystick_Lstick_right","joystick_Lstick_left","joystick_Lstick_down","joystick_Lstick_up", joystick_deadzone)
 	var rightstick = Input.get_vector("joystick_Rstick_right","joystick_Rstick_left","joystick_Rstick_down","joystick_Rstick_up", joystick_deadzone)

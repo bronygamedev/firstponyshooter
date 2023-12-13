@@ -30,16 +30,16 @@ func _physics_process(delta):
 		$"Type-a".look_at($"../Player".global_position)
 		shoot()
 	move_and_slide()
-	
+
 func path_finding(direction:Vector3, delta):
 	if navMapReady:
 		nav.target_position = $"../Player".global_position
-		
+
 		direction = nav.get_next_path_position() - global_position
 		direction = direction.normalized()
-		
+
 		velocity = velocity.lerp(direction * speed, accel * delta)
-		
+
 		if not is_on_floor():
 			velocity.y += gravity
 
