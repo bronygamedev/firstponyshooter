@@ -29,3 +29,4 @@ get_contributors.py
 change_permissions.py
 .sync.ffs_db
 client/.import/*
+.vscode/*

@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Contributing to first pony shooter
+Contributing to the first pony shooter
 
 First off, thanks for taking the time to contribute! ❤️
 
@@ -17,19 +17,18 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [Code of Conduct](#code-of-conduct)
 - [I Have a Question](#i-have-a-question)
 - [I Want To Contribute](#i-want-to-contribute)
-  - [Reporting Bugs](#reporting-bugs)
-  - [Suggesting Enhancements](#suggesting-enhancements)
-  - [Setting up your envirement](#setting-up-your-envirement)
-  - [Contributing assets](#contributing-assets)
-  - [Licences](#licences)
+	- [Reporting Bugs](#reporting-bugs)
+	- [Suggesting Enhancements](#suggesting-enhancements)
+	- [Setting up your environment](#setting-up-your-environment)
+	- [Contributing assets](#contributing-assets)
 - [Styleguides](#styleguides)
-  - [Commit Messages](#commit-messages)
+		- [Code:](#code)
+	- [Commit Messages](#commit-messages)
 
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the
-[first pony shooter Code of Conduct](https://github.com/bronygamedev/firstponyshooterblob/master/CODE_OF_CONDUCT.md).
+This project and everyone participating in it is governed by the [First Pony Shooter Code of Conduct](https://github.com/bronygamedev/firstponyshooterblob/master/CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to <s.bronygamedev@gmail.com> or [discord](discord.gg/78RVfevpuU).
 
@@ -40,11 +39,11 @@ to <s.bronygamedev@gmail.com> or [discord](discord.gg/78RVfevpuU).
 
 Before you ask a question, it is best to search for existing [Issues](https://github.com/bronygamedev/firstponyshooter/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
 
-If you then still feel the need to ask a question and need clarification, we recommend the following:
+If you still feel the need to ask a question and need clarification, we recommend the following:
 
 - Open an [Issue](https://github.com/bronygamedev/firstponyshooter/issues/new).
 - Provide as much context as you can about what you're running into.
-- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+- Provide project and platform versions (godot version, etc), depending on what seems relevant.
 
 We will then take care of the issue as soon as possible.
 
@@ -73,16 +72,15 @@ Depending on how large the project is, you may want to outsource the questioning
 <!-- omit in toc -->
 #### Before Submitting a Bug Report
 
-A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
+A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information, and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 
 - Make sure that you are using the latest version.
 - Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
 - To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/bronygamedev/firstponyshooterissues?q=label%3Abug).
-- Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
+Also, make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
 - Collect information about the bug:
   - Stack trace (Traceback)
-  - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-  - Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
+  - OS, Platform, and Version (Windows, Linux, macOS, x86, ARM).
   - Possibly your input and the output
   - Can you reliably reproduce the issue? And can you also reproduce it with older versions?
 
@@ -96,7 +94,7 @@ We use GitHub issues to track bugs and errors. If you run into an issue with the
 
 - Open an [Issue](https://github.com/bronygamedev/firstponyshooter/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
 - Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
+- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports, you should isolate the problem and create a reduced test case.
 - Provide the information you collected in the previous section.
 
 Once it's filed:
@@ -110,7 +108,7 @@ Once it's filed:
 
 ### Suggesting Enhancements
 
-This section guides you through submitting an enhancement suggestion for first pony shooter, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
+This section guides you through submitting an enhancement suggestion for First Pony Shooter, **including** completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
 
 <!-- omit in toc -->
 #### Before Submitting an Enhancement
@@ -133,10 +131,9 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/bronyg
 
 <!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
 
-### Setting up your envirement
+### Setting up your environment
 Required programes:
- - the latest godot 4 mono stable build  
- - dotnet 7 sdk
+ - the latest godot 4 stable build  
 <!--### Improving The Documentation
 <!-- TODO
 Updating, improving and correcting the documentation
@@ -144,61 +141,19 @@ Updating, improving and correcting the documentation
 -->
 ### Contributing assets 
 
-If you wish to contribute assets (3d models, images,audio,fonts, etc) follow these rules:  
- - No pentagrams or other satanic symbols.  
+If you wish to contribute assets (3d models, images,audio,fonts, etc) follow these rules:    
  - please keep all assets modest (13+).  
- - all 3D models bust be in the glb, gltf and/or blend formats.  
+ - all 3D models must be in the glb, gltf, obj and/or blend format(s).  
 
 If you contribute 3D models it's recommended that you put a blend file in `blender_files/{yourname}` with the appropriate textures.
-
-### Licences 
-All assets are licened under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0)
+Licenses 
+All assets are licened under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0) unless otherwise stated 
 ## Styleguides
-- have a new line before and after eatch: if, func, match and, for statments.
-  eg:  
-
-  ```gdscript
-
-  if a == b:
-    # do stuf
-  
-  func foo(args):
-    # code ...
-  
-  match foo:
-    # code ...
-  
-  for foo.len():
-    # code ...
-  
-  ```
-  **DO NOT PUT A NEW LINE BEFORE AN ELSE OR ELIF**
-  ```
-  if a == b:
-    # code ...
-
-  else:
-    #code ..
-  
-  #DO NOT DO THIS
-  ```
- - group varables together and, put a newline between groups. eg:
-    ```
-    var foo:int = 1
-    var foo2:int = 4
-
-    var foo3:float = 2.3
-    var foo4:float = 3.2 
-      
-    etc ...
-      
-    ```
- - when making global varables always specify the varable type.  
-  eg: `var foo:int = 1`
  - Use snake_case for folder and file names (with the exception of C# scripts). This sidesteps case sensitivity issues that can crop up after exporting a project on Windows. C# scripts are an exception to this rule, as the convention is to name them after the class name which should be in PascalCase.
  - Use PascalCase for node names, as this matches built-in node casing.
  - In general, keep third-party resources in a top-level `addons/` folder, even if they aren't editor plugins. This makes it easier to track which files are third-party. There are some exceptions to this rule; for instance, if you use third-party game assets for a character, it makes more sense to include them within the same folder as the character scenes and scripts.
-
+#### Code:
+for styling code we use [GDScript style guide](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html)
 
 
 ### Commit Messages
