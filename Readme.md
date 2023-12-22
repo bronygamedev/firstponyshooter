@@ -2,7 +2,7 @@
 
 # First pony shooter
 First Pony Shooter is an opensource 3d fps game where you play as ponys fighting to stay alive against waves of enemies  
-website: https://bronygamedev.github.io/firstponyshooter/
+website: [https://bronygamedev.github.io/firstponyshooter/](https://bronygamedev.github.io/firstponyshooter/)
 
 ## Table of Contents
 
