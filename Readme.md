@@ -1,6 +1,4 @@
 # **THIS PROJECT WAS PUT ON HOLD. I HOPE TO CONTINUE TO WORKING ON IT IN EARLY 2024**
-![Static Badge](https://img.shields.io/badge/miro-ffc531?link=https%3A%2F%2Fmiro.com%2Fapp%2Fboard%2FuXjVN_QVxso%3D%2F%3Fshare_link_id%3D800051734353)
- 
 # First pony shooter
 First Pony Shooter is an opensource 3d fps game where you play as ponys fighting to stay alive against waves of enemies  
 website: [https://bronygamedev.github.io/firstponyshooter/](https://bronygamedev.github.io/firstponyshooter/)
