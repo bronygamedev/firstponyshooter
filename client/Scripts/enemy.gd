@@ -13,7 +13,7 @@ var bullet_insence
 @onready var nav := $NavigationAgent3D
 @onready var gun = $"Type-a"
 @onready var gun_animation = $"Type-a/AnimationPlayer"
-@onready var gun_barrel = $"Type-a/Barrel"
+@onready var gun_barrel = $"Type-a/RayCast3D"
 
 func _ready():
 	# Delay navigation queries until after the first physics frame

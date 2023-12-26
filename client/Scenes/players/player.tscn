@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd2b3pd08qtox"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pra34"]
-[ext_resource type="Script" path="res://Scripts/Guns.gd" id="2_gulbq"]
 [ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Scenes/Guns/type-a.tscn" id="3_viawr"]
 [ext_resource type="PackedScene" uid="uid://drraxvfcsxsu3" path="res://Scenes/UI/HUD.tscn" id="4_i7i6s"]
 
@@ -15,6 +14,40 @@ material = SubResource("StandardMaterial3D_pcgbv")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_77ii3"]
 height = 0.5
+
+[sub_resource type="GDScript" id="GDScript_pd8kb"]
+script/source = "extends Node3D
+
+var bullet = load(\"res://Scenes/misc/bullet.tscn\")
+var bullet_insence
+var aiming = false
+
+@onready var gun = get_child(0)
+@onready var gun_barrel = get_child(0).get_child(2)
+@onready var gun_animation = get_child(0).get_child(1)
+func _process(_delta):
+	if Input.is_action_pressed(\"shoot\") and !get_tree().get_nodes_in_group(\"Settings\")[0].visible:
+		shoot()
+	if Input.is_action_pressed(\"aim\"):
+		if not aiming:
+			$\"../AnimationPlayer\".play(\"aim\")
+			aiming = true
+			$\"../..\".mouse_sensitivity = 0.01
+	elif Input.is_action_just_released(\"aim\"):
+		$\"../AnimationPlayer\".play_backwards(\"aim\")
+		aiming = false
+		$\"../..\".mouse_sensitivity = 0.05
+
+func shoot():
+	if !gun_animation.is_playing():
+		gun_animation.play(\"Shoot\")
+		bullet_insence = bullet.instantiate()
+		bullet_insence.damage = gun.get_meta(\"damage\")
+		bullet_insence.position = gun_barrel.global_position
+		bullet_insence.transform.basis = gun_barrel.global_transform.basis
+		bullet_insence.shotfrom = bullet_insence.shotspawners.Player
+		get_parent().get_parent().get_parent().add_child(bullet_insence)
+"
 
 [sub_resource type="Animation" id="Animation_5fbkj"]
 length = 0.001
@@ -122,7 +155,7 @@ fov = 70.0
 
 [node name="Guns" type="Node3D" parent="Head"]
 transform = Transform3D(0.999391, 0, 0.0348995, 0, 1, 0, -0.0348995, 0, 0.999391, 0.286302, -0.27413, -0.421584)
-script = ExtResource("2_gulbq")
+script = SubResource("GDScript_pd8kb")
 
 [node name="Type-a" parent="Head/Guns" instance=ExtResource("3_viawr")]
 

@@ -153,5 +153,6 @@ libraries = {
 "": SubResource("AnimationLibrary_r1fl0")
 }
 
-[node name="Barrel" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108, -0.412)
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112308, -0.4488)
+target_position = Vector3(0, 0, -1)

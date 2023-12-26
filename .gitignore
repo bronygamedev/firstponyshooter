@@ -30,3 +30,4 @@ change_permissions.py
 .sync.ffs_db
 client/.import/*
 .vscode/*
+*/export/*

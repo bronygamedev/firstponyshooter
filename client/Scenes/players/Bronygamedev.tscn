@@ -494,13 +494,12 @@ height = 1.56016
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tbqla"]
 height = 0.46379
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.751192, 0)
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CamAndGuns") groups=["Player"]]
 script = ExtResource("1_rqpje")
+CamAndGuns = NodePath("Skeleton3D/Head")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.110584, 0, 0.993867, 0, 1, 0, -0.993867, 0, -0.110584, 2.42108, 1.52529, 0)
-script = ExtResource("2_vjl8u")
+[node name="DebugCamera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03669, 1.52529, 3.6281)
 
 [node name="GroundCheck" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386774, 0)
@@ -643,7 +642,7 @@ bones/19/name = "Muzzle.Lower"
 bones/19/parent = 17
 bones/19/rest = Transform3D(1, 1.2595e-06, -3.76414e-07, 1.48643e-07, 0.176168, 0.98436, 1.30612e-06, -0.98436, 0.176168, -7.67933e-07, 0.111946, -0.145165)
 bones/19/enabled = true
-bones/19/position = Vector3(-2.90295e-07, -0.75907, -0.518456)
+bones/19/position = Vector3(-7.67933e-07, 0.111946, -0.145165)
 bones/19/rotation = Quaternion(-0.641807, -5.4851e-07, -3.62144e-07, 0.766866)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "Tongue"
@@ -829,25 +828,27 @@ bones/45/position = Vector3(-1.03072e-06, -0.0975169, 0.0573629)
 bones/45/rotation = Quaternion(-6.56712e-07, 0.208983, 0.977919, 1.40342e-07)
 bones/45/scale = Vector3(1, 0.999999, 0.999999)
 
-[node name="camera" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(-1, -7.07701e-12, -1.27952e-06, -5.04042e-07, 0.919141, 0.393917, 1.17606e-06, 0.393917, -0.919145, 4.76834e-07, 1.295, 0.424999)
+[node name="Head" type="BoneAttachment3D" parent="Skeleton3D"]
+transform = Transform3D(-1, -5.82645e-12, -1.27952e-06, -5.0404e-07, 0.919142, 0.393918, 1.17606e-06, 0.393917, -0.919146, 4.76834e-07, 1.295, 0.425)
 bone_name = "Head"
 bone_idx = 17
 
-[node name="Camera3D" type="Camera3D" parent="Skeleton3D/camera"]
-transform = Transform3D(1, -6.05303e-07, 1.51039e-07, 6.05051e-07, 0.881957, -0.471337, 1.52093e-07, 0.471337, 0.881953, 4.99585e-07, 0.480753, -0.357842)
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/Head"]
+transform = Transform3D(1, 8.83624e-12, -2.38742e-12, 0, 0.919139, -0.393944, 0, 0.393943, 0.919135, -2.29468e-07, 0.481917, -0.309001)
 current = true
 
-[node name="Guns" type="Node3D" parent="Skeleton3D/camera"]
-process_mode = 4
-transform = Transform3D(0.999391, 0.0137484, 0.0320774, -1.86265e-09, 0.919136, -0.393942, -0.0348995, 0.393702, 0.918576, 0.297504, 0.304112, -0.528367)
+[node name="Guns" type="Node3D" parent="Skeleton3D/Head"]
+transform = Transform3D(0.997325, 0.0060406, 0.072837, 0.0271551, 0.894619, -0.446019, -0.0678553, 0.446803, 0.892063, 0.206445, 0.378246, -0.404542)
 script = ExtResource("2_vjl8u")
 
-[node name="Type-a" parent="Skeleton3D/camera/Guns" instance=ExtResource("3_5v445")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Type-a" parent="Skeleton3D/Head/Guns" instance=ExtResource("3_5v445")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.00135997, -0.00026381, -0.085835)
+
+[node name="BlasterA" parent="Skeleton3D/Head/Guns/Type-a" index="0"]
+transform = Transform3D(-1, -1.01863e-09, -1.56462e-07, -1.45519e-09, 1, 0, 1.49012e-07, 4.65661e-10, -1, 0, 0, 0)
 
 [node name="eye_ball_left_001" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(-0.88988, -0.158122, 0.427912, 0.392503, 0.212653, 0.894824, -0.23249, 0.964246, -0.127175, 0.180807, 1.59254, 0.711335)
+transform = Transform3D(-0.88988, -0.158123, 0.427912, 0.392503, 0.212653, 0.894825, -0.232491, 0.964248, -0.127175, 0.180807, 1.59254, 0.711335)
 bone_name = "eye_ball_left.001"
 bone_idx = 34
 
@@ -856,7 +857,7 @@ mesh = SubResource("ArrayMesh_q0cgl")
 skeleton = NodePath("")
 
 [node name="eye_ball_right_001" type="BoneAttachment3D" parent="Skeleton3D"]
-transform = Transform3D(-0.88988, 0.158125, -0.427914, -0.392504, 0.212653, 0.894827, 0.232493, 0.964245, -0.127174, -0.180806, 1.59254, 0.711337)
+transform = Transform3D(-0.88988, 0.158125, -0.427914, -0.392505, 0.212653, 0.89483, 0.232494, 0.964247, -0.127175, -0.180806, 1.59254, 0.711337)
 bone_name = "eye_ball_right.001"
 bone_idx = 38
 
@@ -911,5 +912,5 @@ shape = SubResource("CylinderShape3D_tbqla")
 [node name="Redicle" parent="HUD" index="2" node_paths=PackedStringArray("PLAYER_CONTROLLER")]
 PLAYER_CONTROLLER = NodePath("../..")
 
-[editable path="Skeleton3D/camera/Guns/Type-a"]
+[editable path="Skeleton3D/Head/Guns/Type-a"]
 [editable path="HUD"]

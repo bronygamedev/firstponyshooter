@@ -125,5 +125,18 @@ visible = false
 [node name="Player" parent="." instance=ExtResource("5_v0r6u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
 
+[node name="Head" parent="Player/Skeleton3D" index="0"]
+transform = Transform3D(-1, -5.82645e-12, -1.27952e-06, -5.0404e-07, 0.919142, 0.393918, 1.17606e-06, 0.393917, -0.919146, 4.76834e-07, 1.295, 0.425)
+
+[node name="eye_ball_left_001" parent="Player/Skeleton3D" index="1"]
+transform = Transform3D(-0.88988, -0.158123, 0.427912, 0.392503, 0.212653, 0.894825, -0.232491, 0.964248, -0.127175, 0.180807, 1.59254, 0.711335)
+
+[node name="eye_ball_right_001" parent="Player/Skeleton3D" index="2"]
+transform = Transform3D(-0.88988, 0.158125, -0.427914, -0.392505, 0.212653, 0.89483, 0.232494, 0.964247, -0.127175, -0.180806, 1.59254, 0.711337)
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="timeout" from="SpawnCoolDown" to="." method="_on_cool_down_timeout"]
+
+[editable path="Player"]
+[editable path="Player/Skeleton3D/Head/Guns/Type-a"]
+[editable path="Player/HUD"]

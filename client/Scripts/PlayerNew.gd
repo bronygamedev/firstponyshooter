@@ -12,6 +12,7 @@ var full_contact:bool = false
 @export var mouse_sensitivity = 0.05 # (float , 0.01, 1)
 @export var gamepad_sensitivity = 1.5 # (float , 0.01, 10)
 @export var joystick_deadzone = 0.5 # (float , 0.01, 1)
+@export var CamAndGuns:Node3D
 
 var direction:Vector3
 var h_velocity:Vector3

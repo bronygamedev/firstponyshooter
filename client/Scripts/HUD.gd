@@ -1,3 +1,4 @@
+
 extends Control
 
 @onready var globalPlayerVars = get_node("/root/PlayerGlobalVarables")

@@ -10,7 +10,7 @@ var navMapReady = false
 func _ready():
 	await get_tree().process_frame
 	navMapReady = true
-	
+
 func _input(event):
 	if event is InputEventKey and (event.keycode == KEY_T and canSpawnNewEnemy):
 		e_insence = enemy.instantiate()
@@ -19,7 +19,7 @@ func _input(event):
 		$SpawnCoolDown.start()
 		print("enemy spawn")
 		canSpawnNewEnemy = false
-		
+
 
 
 func _on_cool_down_timeout():
@@ -29,4 +29,4 @@ func _on_cool_down_timeout():
 func _on_child_entered_tree(node):
 	if node.is_in_group("Placeable_object") and navMapReady:
 		map.bake_navigation_mesh(true)
-		
+

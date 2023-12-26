@@ -22,3 +22,5 @@ debug_enabled = true
 
 [node name="Type-a" parent="." instance=ExtResource("3_xulji")]
 transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0.374, 0.543, -0.422)
+
+[editable path="Type-a"]
