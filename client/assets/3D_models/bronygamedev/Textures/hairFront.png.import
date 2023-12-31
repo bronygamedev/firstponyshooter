@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8fjddqg6dwim"
-path.s3tc="res://.godot/imported/hairFront.png-2d7566e0d5e74115bba5d1915e742252.s3tc.ctex"
-path.etc2="res://.godot/imported/hairFront.png-2d7566e0d5e74115bba5d1915e742252.etc2.ctex"
+path.s3tc="res://.godot/imported/hairFront.png-50c60dfe1bd9d253245480eaf343ce9f.s3tc.ctex"
+path.etc2="res://.godot/imported/hairFront.png-50c60dfe1bd9d253245480eaf343ce9f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3D_models/bronygamedev/Textures/hairFront.png"
-dest_files=["res://.godot/imported/hairFront.png-2d7566e0d5e74115bba5d1915e742252.s3tc.ctex", "res://.godot/imported/hairFront.png-2d7566e0d5e74115bba5d1915e742252.etc2.ctex"]
+source_file="res://Assets/3D_models/bronygamedev/Textures/hairFront.png"
+dest_files=["res://.godot/imported/hairFront.png-50c60dfe1bd9d253245480eaf343ce9f.s3tc.ctex", "res://.godot/imported/hairFront.png-50c60dfe1bd9d253245480eaf343ce9f.etc2.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
+## get rid of this
 extends Node3D
-
 @onready var hud = $"../HUD"
 
 const maxhealth = 100

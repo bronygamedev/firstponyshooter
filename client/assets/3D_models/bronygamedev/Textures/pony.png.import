@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ikt1nufy73ql"
-path="res://.godot/imported/pony.png-0ac5580b1f2143c5c349b3296fd93949.ctex"
+path="res://.godot/imported/pony.png-9e8fc18de47b32d8ffc644f5f44eb2e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3D_models/bronygamedev/Textures/pony.png"
-dest_files=["res://.godot/imported/pony.png-0ac5580b1f2143c5c349b3296fd93949.ctex"]
+source_file="res://Assets/3D_models/bronygamedev/Textures/pony.png"
+dest_files=["res://.godot/imported/pony.png-9e8fc18de47b32d8ffc644f5f44eb2e3.ctex"]
 
 [params]
 

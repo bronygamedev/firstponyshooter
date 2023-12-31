@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0x0dnj5q0va2"]
+
+[ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_omrlq"]
+[ext_resource type="PackedScene" uid="uid://db3nbayltjwmf" path="res://Guns/type-a.tscn" id="3_xulji"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pj1jp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4dw44"]
+
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_omrlq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_pj1jp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4dw44")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Type-a" parent="." instance=ExtResource("3_xulji")]
+transform = Transform3D(0.99863, 0, 0.052336, 0, 1, 0, -0.052336, 0, 0.99863, 0.374, 0.543, -0.422)
+
+[editable path="Type-a"]

@@ -1,11 +1,11 @@
 # **THIS PROJECT WAS PUT ON HOLD. I HOPE TO CONTINUE TO WORKING ON IT IN EARLY 2024**
-# First pony shooter
+# Firstponyshooter
 First Pony Shooter is an opensource 3d fps game where you play as ponys fighting to stay alive against waves of enemies  
 website: [https://bronygamedev.github.io/firstponyshooter/](https://bronygamedev.github.io/firstponyshooter/)
 
 ## Table of Contents
 
-- [First pony shooter](#first-pony-shooter)
+- [Firstponyshooter](#firstponyshooter)
 	- [Table of Contents](#table-of-contents)
 	- [Getting Started](#getting-started)
 		- [Dependencies](#dependencies)
@@ -29,7 +29,7 @@ The latest Godot 4 build should be all you need
 This project is [hosted on GitHub](https://github.com/bronygamedev/firstponyshooter). You can clone this project directly using this command:
 
 ```
-git@github.com:bronygamedev/firstponyshooter.git
+git clone git@github.com:bronygamedev/firstponyshooter.git
 ```
 **[Back to top](#table-of-contents)**
 

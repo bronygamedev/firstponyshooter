@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqj6qjic68udp"
-path.s3tc="res://.godot/imported/eyes.png-b5dfce924c77684e45f598f89151133a.s3tc.ctex"
-path.etc2="res://.godot/imported/eyes.png-b5dfce924c77684e45f598f89151133a.etc2.ctex"
+path.s3tc="res://.godot/imported/eyes.png-b381374393aec8c37870ac552f6968f5.s3tc.ctex"
+path.etc2="res://.godot/imported/eyes.png-b381374393aec8c37870ac552f6968f5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3D_models/bronygamedev/Textures/eyes.png"
-dest_files=["res://.godot/imported/eyes.png-b5dfce924c77684e45f598f89151133a.s3tc.ctex", "res://.godot/imported/eyes.png-b5dfce924c77684e45f598f89151133a.etc2.ctex"]
+source_file="res://Assets/3D_models/bronygamedev/Textures/eyes.png"
+dest_files=["res://.godot/imported/eyes.png-b381374393aec8c37870ac552f6968f5.s3tc.ctex", "res://.godot/imported/eyes.png-b381374393aec8c37870ac552f6968f5.etc2.ctex"]
 
 [params]
 

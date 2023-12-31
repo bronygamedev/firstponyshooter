@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gcgyicu3184r"
-path="res://.godot/imported/foamBulletA-low.png-02f07158d2bf73e2ef3bd7468b2c7b2f.ctex"
+path="res://.godot/imported/foamBulletA-low.png-fb0756af4e67c4c6275bb04142a3e484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3D_models/kenney/kenney_blaster-kit/Previews/foamBulletA-low.png"
-dest_files=["res://.godot/imported/foamBulletA-low.png-02f07158d2bf73e2ef3bd7468b2c7b2f.ctex"]
+source_file="res://Assets/3D_models/kenney/kenney_blaster-kit/Previews/foamBulletA-low.png"
+dest_files=["res://.godot/imported/foamBulletA-low.png-fb0756af4e67c4c6275bb04142a3e484.ctex"]
 
 [params]
 

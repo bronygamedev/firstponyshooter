@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ba5hof2bsao3h"
-path="res://.godot/imported/blasterL.glb-8467f4f4b89cd0721041b024b7c8541c.scn"
+path="res://.godot/imported/blasterL.glb-f430690f13067a880205601b92e39085.scn"
 
 [deps]
 
-source_file="res://assets/3D_models/kenney/kenney_blaster-kit/Models/GLTF format/blasterL.glb"
-dest_files=["res://.godot/imported/blasterL.glb-8467f4f4b89cd0721041b024b7c8541c.scn"]
+source_file="res://Assets/3D_models/kenney/kenney_blaster-kit/Models/GLTF format/blasterL.glb"
+dest_files=["res://.godot/imported/blasterL.glb-f430690f13067a880205601b92e39085.scn"]
 
 [params]
 

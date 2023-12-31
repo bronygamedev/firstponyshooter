@@ -10,20 +10,20 @@ config_version=5
 
 [application]
 
-config/name="first pony shooter"
+config/name="firstponyshooter"
 config/tags=PackedStringArray("bronygamedev")
-run/main_scene="res://Scenes/maps/testing grounds.tscn"
+run/main_scene="res://src/Scenes/misc/splash.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.2")
 boot_splash/show_image=false
-config/icon="res://icon.png"
+config/icon="res://src/icon.svg"
 boot_splash/use_custom_user_dir=false
 
 [autoload]
 
-PlayerGlobalVarables="*res://Scripts/PlayerGlobalVarables.gd"
-GlobalVarables="*res://Scripts/globalVarables.gd"
-SceneManager="*res://Scripts/SceneManager.gd"
+PlayerGlobalVarables="*res://src/Scripts/PlayerGlobalVarables.gd"
+GlobalVarables="*res://src/Scripts/globalVarables.gd"
+SceneManager="*res://src/Scripts/SceneManager.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [display]
@@ -34,6 +34,7 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/fps=30
+run/main_run_args="maptest \"D:\\firstponyshooter mmk\\f.fpsmap\""
 
 [editor_plugins]
 
@@ -42,6 +43,10 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 [filesystem]
 
 import/fbx/enabled=false
+
+[global]
+
+testmap=""
 
 [input]
 

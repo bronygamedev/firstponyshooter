@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5nm004jl4nck"
-path.s3tc="res://.godot/imported/texture_01.png-ffcd139f3acd5d89efd41a891bff2984.s3tc.ctex"
-path.etc2="res://.godot/imported/texture_01.png-ffcd139f3acd5d89efd41a891bff2984.etc2.ctex"
+path.s3tc="res://.godot/imported/texture_01.png-ae1f4a93e8704f87f2dd561671acec30.s3tc.ctex"
+path.etc2="res://.godot/imported/texture_01.png-ae1f4a93e8704f87f2dd561671acec30.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Images/kenney-prototype-textures/dark/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-ffcd139f3acd5d89efd41a891bff2984.s3tc.ctex", "res://.godot/imported/texture_01.png-ffcd139f3acd5d89efd41a891bff2984.etc2.ctex"]
+source_file="res://Assets/Images/kenney-prototype-textures/dark/texture_01.png"
+dest_files=["res://.godot/imported/texture_01.png-ae1f4a93e8704f87f2dd561671acec30.s3tc.ctex", "res://.godot/imported/texture_01.png-ae1f4a93e8704f87f2dd561671acec30.etc2.ctex"]
 
 [params]
 

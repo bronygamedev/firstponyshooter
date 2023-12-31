@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn5uxlefukx2o"
-path.s3tc="res://.godot/imported/horn.png-cfa5719e627757d627d8efb90978c174.s3tc.ctex"
-path.etc2="res://.godot/imported/horn.png-cfa5719e627757d627d8efb90978c174.etc2.ctex"
+path.s3tc="res://.godot/imported/horn.png-83940c3e0181a0f8c9b0f60999fcc5d5.s3tc.ctex"
+path.etc2="res://.godot/imported/horn.png-83940c3e0181a0f8c9b0f60999fcc5d5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3D_models/bronygamedev/Textures/horn.png"
-dest_files=["res://.godot/imported/horn.png-cfa5719e627757d627d8efb90978c174.s3tc.ctex", "res://.godot/imported/horn.png-cfa5719e627757d627d8efb90978c174.etc2.ctex"]
+source_file="res://Assets/3D_models/bronygamedev/Textures/horn.png"
+dest_files=["res://.godot/imported/horn.png-83940c3e0181a0f8c9b0f60999fcc5d5.s3tc.ctex", "res://.godot/imported/horn.png-83940c3e0181a0f8c9b0f60999fcc5d5.etc2.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8w2xhtvooajk"
-path="res://.godot/imported/foamBulletA.glb-c36edb260dec0b8245e9e99a2f3a560f.scn"
+path="res://.godot/imported/foamBulletA.glb-bdd5654b65f74fb94f919579382c1e70.scn"
 
 [deps]
 
-source_file="res://assets/3D_models/kenney/kenney_blaster-kit/Models/GLTF format/foamBulletA.glb"
-dest_files=["res://.godot/imported/foamBulletA.glb-c36edb260dec0b8245e9e99a2f3a560f.scn"]
+source_file="res://Assets/3D_models/kenney/kenney_blaster-kit/Models/GLTF format/foamBulletA.glb"
+dest_files=["res://.godot/imported/foamBulletA.glb-bdd5654b65f74fb94f919579382c1e70.scn"]
 
 [params]
 

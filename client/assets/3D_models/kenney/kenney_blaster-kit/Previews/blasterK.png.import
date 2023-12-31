@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dap4h1a3gfrub"
-path="res://.godot/imported/blasterK.png-0156358d776ed766efd8e294d7e7b6e3.ctex"
+path="res://.godot/imported/blasterK.png-eac418e7cf9b95dcd89134f8bb2874a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3D_models/kenney/kenney_blaster-kit/Previews/blasterK.png"
-dest_files=["res://.godot/imported/blasterK.png-0156358d776ed766efd8e294d7e7b6e3.ctex"]
+source_file="res://Assets/3D_models/kenney/kenney_blaster-kit/Previews/blasterK.png"
+dest_files=["res://.godot/imported/blasterK.png-eac418e7cf9b95dcd89134f8bb2874a5.ctex"]
 
 [params]
 
