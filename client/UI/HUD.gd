@@ -1,8 +1,6 @@
 
 extends Control
 
-@onready var globalPlayerVars = get_node("/root/PlayerGlobalVarables")
-
 var settings_vis = 1
 
 func _input(event):
@@ -14,11 +12,8 @@ func _input(event):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _ready():
-	$HealthBar.max_value = globalPlayerVars.maxhealth
-	$HealthBar.value = globalPlayerVars.health
 
-func _process(delta):
+func _process(_delta):
 	$HealthBar/Label.text = str($HealthBar.value)
 
 

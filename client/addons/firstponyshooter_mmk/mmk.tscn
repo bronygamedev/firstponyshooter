@@ -1,0 +1,158 @@
+[gd_scene load_steps=4 format=3 uid="uid://840lvo10kc2r"]
+
+[ext_resource type="Script" path="res://addons/firstponyshooter_mmk/mmk.gd" id="1_ad77o"]
+[ext_resource type="Texture2D" uid="uid://ybtv4uu26fg8" path="res://addons/firstponyshooter_mmk/icons/Folder.svg" id="1_nwru3"]
+[ext_resource type="Texture2D" uid="uid://bi5igd0lksr43" path="res://addons/firstponyshooter_mmk/icons/refresh.svg" id="3_ybr6i"]
+
+[node name="Map Builder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ad77o")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GodotPath" type="HBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="ScrollContainer/HBoxContainer/GodotPath"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "path to godot"
+
+[node name="GodotFileDialog" type="FileDialog" parent="ScrollContainer/HBoxContainer/GodotPath"]
+title = "Open a File"
+position = Vector2i(465, 134)
+size = Vector2i(454, 400)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="Godotfile" type="Button" parent="ScrollContainer/HBoxContainer/GodotPath"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+icon = ExtResource("1_nwru3")
+icon_alignment = 1
+
+[node name="FpsFilePath" type="HBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="ScrollContainer/HBoxContainer/FpsFilePath"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "path to firstponyshooter"
+
+[node name="FileDialog" type="FileDialog" parent="ScrollContainer/HBoxContainer/FpsFilePath"]
+title = "Open a File"
+position = Vector2i(465, 134)
+size = Vector2i(454, 400)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray(".pck")
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="file" type="Button" parent="ScrollContainer/HBoxContainer/FpsFilePath"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.15
+icon = ExtResource("1_nwru3")
+icon_alignment = 1
+
+[node name="SaveConfig" type="Button" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "SAVE CONFIG"
+
+[node name="Options" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="selector" type="HBoxContainer" parent="ScrollContainer/HBoxContainer/Options"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ScrollContainer/HBoxContainer/Options/selector"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "[select]"
+popup/item_0/id = 0
+popup/item_1/text = "f"
+popup/item_1/id = 1
+
+[node name="refresh" type="Button" parent="ScrollContainer/HBoxContainer/Options/selector"]
+layout_mode = 2
+icon = ExtResource("3_ybr6i")
+icon_alignment = 1
+
+[node name="MapName" type="LineEdit" parent="ScrollContainer/HBoxContainer/Options"]
+layout_mode = 2
+placeholder_text = "Map name"
+
+[node name="AuthorName" type="LineEdit" parent="ScrollContainer/HBoxContainer/Options"]
+layout_mode = 2
+placeholder_text = "author name"
+
+[node name="MapVersion" type="LineEdit" parent="ScrollContainer/HBoxContainer/Options"]
+layout_mode = 2
+placeholder_text = "Map version"
+virtual_keyboard_type = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/HBoxContainer/Options"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Update" type="Button" parent="ScrollContainer/HBoxContainer/Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UPDATE"
+
+[node name="Build" type="Button" parent="ScrollContainer/HBoxContainer/Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BUILD"
+
+[node name="Test" type="Button" parent="ScrollContainer/HBoxContainer/Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TEST"
+
+[node name="previewButton" type="Button" parent="ScrollContainer/HBoxContainer/Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CREATE PREVIEW"
+
+[node name="CreateMap" type="Button" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CREATE MAP"
+
+[connection signal="file_selected" from="ScrollContainer/HBoxContainer/GodotPath/GodotFileDialog" to="." method="_on_godot_file_dialog_file_selected"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/GodotPath/Godotfile" to="." method="_on_Godotfile_pressed"]
+[connection signal="file_selected" from="ScrollContainer/HBoxContainer/FpsFilePath/FileDialog" to="." method="_on_file_selected"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/FpsFilePath/file" to="." method="_on_file_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/SaveConfig" to="." method="saveConfig"]
+[connection signal="item_selected" from="ScrollContainer/HBoxContainer/Options/selector/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Options/selector/refresh" to="." method="updateSelector"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Options/HBoxContainer/Update" to="." method="_on_update_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Options/HBoxContainer/Build" to="." method="buildMap"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Options/HBoxContainer/Test" to="." method="_on_testmap_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Options/HBoxContainer/previewButton" to="." method="_on_preview_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/CreateMap" to="." method="createMap"]

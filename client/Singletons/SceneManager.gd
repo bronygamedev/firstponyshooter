@@ -4,7 +4,11 @@ extends Node
 var gameoverScreenPath = "res://Scenes/menus/gameover.tscn"
 var mainmenuScenePath = "res://Scenes/menus/main_menu.tscn"
 var args : PackedStringArray
-var installingmap := false
+var userDir = DirAccess.open("user://")
+
+func _enter_tree():
+	if !userDir.dir_exists("Maps"):
+		userDir.make_dir("user://Maps")
 func _ready():
 	args = OS.get_cmdline_args()
 	var index = 0
@@ -20,9 +24,8 @@ func changeScene(currentSceneName:String, newScenePath):
 	get_tree().root.get_node(currentSceneName).queue_free()
 	return OK
 
-## installs a `.fpsmap` map file. ⚠ unfinished ⚠
+## installs a `.fpsmap` map file.
 func installmap(filepath:String,goToMap = false):
-	installingmap = true
 	var reader := ZIPReader.new()
 	var err := reader.open(filepath)
 	if err != OK:
@@ -34,9 +37,10 @@ func installmap(filepath:String,goToMap = false):
 	var d = DirAccess.open("user://")
 	d.make_dir_recursive("user://maps/" + mapname)
 	for f in reader.get_files():
+		print(f)
 		var contents = reader.read_file(f)
 		var mapfile = FileAccess.open("user://maps/" + mapname + "/"+ f,FileAccess.WRITE_READ)
-		mapfile.store_string(contents.get_string_from_utf8())
+		mapfile.store_buffer(contents)
 		mapfile.close()
 	reader.close()
 	print("instalation complete")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq46bsydt070f"]
+
+[ext_resource type="Script" path="res://Menus/maps.gd" id="1_kb7lh"]
+
+[node name="Maps" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_kb7lh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Top" type="HBoxContainer" parent="ScrollContainer/Grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Bottom" type="HBoxContainer" parent="ScrollContainer/Grid"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 2.0
+offset_right = 619.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 32
+text = "Maps"
+
+[node name="InstallMap" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 55.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Install map"
+
+[node name="MapFileDialog" type="FileDialog" parent="InstallMap"]
+title = "Open a File"
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.fpsmap , *.zip", "*")
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="pressed" from="InstallMap" to="." method="_on_install_map_pressed"]
+[connection signal="file_selected" from="InstallMap/MapFileDialog" to="." method="_on_map_file_dialog_file_selected"]

@@ -1,6 +1,6 @@
 extends Node3D
 
-var enemy = load("res://Scenes/misc/enemy.tscn")
+var enemy = load("res://Enemies/Basic/enemy.tscn")
 var e_insence
 var canSpawnNewEnemy = true
 var navMapReady = false
